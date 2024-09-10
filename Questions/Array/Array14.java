@@ -4,28 +4,27 @@ package HackerEarth;
 
 public class Array14 {
     public static void F(int[] a) {
-        int low = 0;
+          int low = 0;
         int mid = 0;
         int high = a.length - 1;
 
         while (mid <= high) {
             if (a[mid] == 0) {
-                swap(a[low], a[mid]);
+                swap(a, low, mid);
                 low++;
                 mid++;
             } else if (a[mid] == 1) {
                 mid++;
             } else {
-                swap(a[mid], a[high]);
+                swap(a,mid,high);
                 high--;
             }
         }
 
     }
-
-    public static void swap(int low, int mid) {
-        int temp = low;
-        low = mid;
-        mid = temp;
+     public static void swap(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
