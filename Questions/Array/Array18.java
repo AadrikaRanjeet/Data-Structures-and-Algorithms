@@ -39,6 +39,15 @@ public class Array18 {
                 list.add(a[i]);
             }
         }
-        return list;
+        int start = 0;
+        int end = list.size() - 1;
+        
+        while (start < end) {
+            int temp = list.get(start);
+            list.set(start, list.get(end));
+            list.set(end, temp);
+            start++;
+            end--;
+        }
     }
 }
